@@ -2,6 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: -1rem;
+  background-color: var(--color-surface);
 }
 
 .navbar__title {
@@ -19,8 +22,8 @@
   position: absolute;
   top: -5px;
   right: -5px;
-  background-color: var(--ll-red-500); /* Example background color */
-  color: white; /* Text color */
+  background-color: var(--ll-red-500);
+  color: white;
   border-radius: 50%;
   padding: 1px 6px;
   font-size: var(--text-xxs);
