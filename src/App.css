@@ -1,0 +1,13 @@
+.app__container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app__content {
+  padding: 24px;
+  flex-grow: 1;
+  overflow-y: auto;
+  height: 100vh;
+  padding: 1rem;
+}
