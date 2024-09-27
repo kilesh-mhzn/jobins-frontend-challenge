@@ -1,0 +1,11 @@
+@import "colors/base.css";
+
+:root {
+  --color-surface: var(--ll-black-100);
+
+  --color-text-base: var(--ll-slate-800);
+  --color-text-muted: var(--ll-black-600);
+
+  --color-background: var(--ll-color-white);
+
+}
