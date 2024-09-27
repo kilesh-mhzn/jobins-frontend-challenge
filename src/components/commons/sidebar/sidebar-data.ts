@@ -5,7 +5,7 @@ import {
   IconShoppingCart,
   IconSmartHome,
   IconStar,
-} from "@ui/layout/icons/icons";
+} from "@ui/icons/icons";
 
 export type MenuItem = {
   title: string;

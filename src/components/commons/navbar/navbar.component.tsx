@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./navbar.module.css";
-import { IconBell } from "@ui/layout/icons/icons";
+import { IconBell } from "@ui/icons/icons";
+import { Avatar } from "@ui/avatar/avatar";
 
 const NotificationButton: React.FC<{ count: number }> = ({ count }) => {
   return (
@@ -19,6 +20,12 @@ const Navbar: React.FC = () => {
       <h1 className={styles["navbar__title"]}>Dashboard</h1>
       <div className={styles["navbar__actions"]}>
         <NotificationButton count={notificationCount} />
+        <Avatar
+          isActive={true}
+          size="lg"
+          name="John Doe"
+          img="https://picsum.photos/200/300"
+        />
       </div>
     </nav>
   );

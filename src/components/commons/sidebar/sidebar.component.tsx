@@ -1,4 +1,4 @@
-import { IconLogo, IconIndentIncrease } from "@ui/layout/icons/icons";
+import { IconLogo, IconIndentIncrease } from "@ui/icons/icons";
 import { sidebarData, MenuItemWithGroup, MenuItem } from "./sidebar-data";
 import styles from "./sidebar.module.css";
 import { NavLink } from "react-router-dom";

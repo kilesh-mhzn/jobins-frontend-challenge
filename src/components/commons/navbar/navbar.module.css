@@ -12,15 +12,21 @@
   font-weight: var(--text-bolder);
 }
 
+.navbar__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
 .navbar__notification {
+  position: relative;
   display: flex;
   align-items: center;
-  position: relative;
 }
 
 .navbar__notification-counter {
   position: absolute;
-  top: -5px;
+  top: 2px;
   right: -5px;
   background-color: var(--ll-red-500);
   color: white;
