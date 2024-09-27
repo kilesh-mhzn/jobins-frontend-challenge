@@ -1,24 +1,91 @@
-.container {
-  width: 200px;
-  height: calc(100vh - 56px);
-  box-shadow: var(--ll-box-shadow);
-  border-right: 1px solid var(--color-button-accent);
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: var(--ll-drawer-shadow);
+  background-color: var(--color-background);
+  overflow-y: auto;
+  transition: width 0.3s ease;
 }
 
-.sidebar-list {
+.sidebar--collapsed {
+  width: 80px;
+}
+
+.sidebar--collapsed .sidebar__list {
+  padding: 0.5rem;
+}
+
+.sidebar--collapsed .sidebar__group-title {
+  font-size: var(--text-xs);
+  text-align: center;
+}
+
+.sidebar__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem 0;
+  justify-content: space-between;
+}
+
+.sidebar--collapsed .sidebar__header {
+  padding: 1rem 0.5rem 0;
+}
+
+.sidebar__header-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-muted);
+}
+
+.sidebar__list {
   padding: 1rem 1.5rem;
   display: grid;
   gap: 1rem;
-  font-weight: var(--text-semibold);
 }
-.list-item {
+
+.sidebar--collapsed .sidebar__list {
+  justify-items: center;
+}
+
+.sidebar__list-item {
   padding: 8px 12px;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-muted);
 }
-.list-item:hover {
-  background-color: var(--color-button-accent-hover);
+
+.sidebar__list-item:hover {
+  background-color: var(--color-background-muted);
 }
-.sidebar-list .active-nav > .list-item {
-  background-color: var(--color-sidebar-background);
-  color: var(--ll-amber-500);
+
+.sidebar--collapsed .sidebar__nav {
+  display: block;
+  width: fit-content;
+}
+
+.sidebar__list .sidebar__nav--active > .sidebar__list-item {
+  background-color: var(--color-background-muted);
+  color: var(--color-text-base);
+  font-weight: var(--text-bold);
+}
+
+.sidebar__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-self: center;
+}
+
+.sidebar__group-title {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  padding: 0.9375rem 0;
 }
