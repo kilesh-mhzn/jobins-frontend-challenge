@@ -1,0 +1,14 @@
+.total-sales-card__image-container {
+  /* Styles for the image container */
+}
+
+.total-sales-card__image {
+  /* Styles for the image */
+}
+
+.total-sales-card__info {
+  display: grid;
+  gap: 1rem;
+  border-left: 2px solid var(--color-background-muted);
+  padding-left: 2rem;
+}

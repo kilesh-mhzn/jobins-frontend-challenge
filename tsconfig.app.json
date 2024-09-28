@@ -14,7 +14,8 @@
       "@contexts/*": ["./contexts/*"],
       "@utils": ["./src/utils.ts"],
       "@services/*": ["./services/*"],
-      "@models/*": ["./models/*"]
+      "@models/*": ["./models/*"],
+      "@assets/*": ["./src/assets/*"]
     },
 
     /* Bundler mode */

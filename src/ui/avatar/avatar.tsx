@@ -21,18 +21,18 @@ export const Avatar = ({ name, img, size = "md", isActive }: AvatarProps) => {
     <div title={name} className={styles.avatar}>
       {img ? (
         <img
-          className={classNames(styles.avatar__image, AvatarSizeMap[size])} // Updated class name
+          className={classNames(styles["avatar__image"], AvatarSizeMap[size])} // Updated class name
           src={img}
           alt="user_img"
         />
       ) : (
-        <div className={classNames(styles.avatar__image, AvatarSizeMap[size])}>
-          {" "}
-          // Updated class name
+        <div
+          className={classNames(styles["avatar__image"], AvatarSizeMap[size])}
+        >
           {extractInitials(name)}
         </div>
       )}
-      {isActive && <div className={styles.avatar__status}></div>}
+      {isActive && <div className={styles["avatar__status"]}></div>}
     </div>
   );
 };

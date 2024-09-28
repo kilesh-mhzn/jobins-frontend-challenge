@@ -1,0 +1,26 @@
+.info-panel-value__name {
+  font-size: var(--text-4xl);
+  font-weight: var(--text-bolder);
+  margin-bottom: 8px;
+}
+
+.info-panel-value__subtitle {
+  font-size: 16px;
+  color: var(--color-text-muted);
+  display: flex;
+}
+.info-panel-value__change {
+  display: flex;
+  gap: 0.125rem;
+}
+.info-panel-value--increased {
+  color: var(--color-success);
+}
+
+.info-panel-value--decreased {
+  color: var(--color-danger);
+}
+
+.info-panel-value--balanced {
+  color: var(--color-text-muted);
+}

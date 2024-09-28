@@ -1,0 +1,92 @@
+{
+  "uuid": "00a72d4d-653b-44f5-9210-7949d47d8c18",
+  "lastMigration": 32,
+  "name": "Mock data",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "baed66a1-6b46-44b6-a8e2-c38509c5a7be",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "v1/sales/stats",
+      "responses": [
+        {
+          "uuid": "d7971fcb-086d-4c75-aa73-0076faf7b582",
+          "body": "{\n  \"message\": \"Successfully fetched data\",\n  \"data\": {\n    \"sales\": {\n      \"total\": \"350,000\",\n      \"difference\": \"85600\"\n    },\n    \"profit\": {\n      \"total\": \"50,000\",\n      \"difference\": \"12%\"\n    },\n    \"salesByCountry\":[\n      {\n        \"name\":\"united States\",\n        \"sales\":\"30,000\",\n        \"difference\":\"25.8%\",\n        \"status\":\"increased\"\n      }\n      ]\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "baed66a1-6b46-44b6-a8e2-c38509c5a7be"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "callbacks": []
+}

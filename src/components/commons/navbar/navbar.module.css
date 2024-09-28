@@ -5,6 +5,7 @@
   position: sticky;
   top: -1rem;
   background-color: var(--color-surface);
+  margin-bottom: 0.75rem;
 }
 
 .navbar__title {

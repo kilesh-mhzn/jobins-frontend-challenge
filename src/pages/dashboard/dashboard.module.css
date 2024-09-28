@@ -1,0 +1,11 @@
+.sales-by-country:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.sales-by-country__avatar {
+  flex: 0 0 38px;
+}
+
+.sales-by-country__info {
+  flex: 0 0 86px;
+}
