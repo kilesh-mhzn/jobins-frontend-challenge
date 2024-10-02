@@ -6,7 +6,7 @@ import { useState } from "react";
 const Customers = () => {
   const { data, loading, error } = useUserData();
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [itemsPerPage, setItemsPerPage] = useState<number>(10);
+  const [itemsPerPage, setItemsPerPage] = useState<number>(5);
 
   const handlePageChange = (newPage: number) => {
     setCurrentPage(newPage);

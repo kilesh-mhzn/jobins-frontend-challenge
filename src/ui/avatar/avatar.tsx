@@ -2,8 +2,9 @@ import styles from "./avatar.module.css";
 import classNames from "classnames";
 import { extractInitials } from "@utils";
 
-type AvatarSize = "lg" | "md" | "xs" | "sm";
+type AvatarSize = "xl" | "lg" | "md" | "xs" | "sm";
 const AvatarSizeMap: Record<AvatarSize, string> = {
+  xl: styles["avatar--size-xl"],
   lg: styles["avatar--size-lg"],
   md: styles["avatar--size-md"],
   xs: styles["avatar--size-xs"],

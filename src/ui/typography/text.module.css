@@ -1,0 +1,112 @@
+.typography__text {
+}
+
+/* Size Modifiers */
+.typography--size-xxs {
+  font-size: var(--text-xxs);
+  line-height: var(--text-content-line-height);
+}
+
+.typography--size-xs {
+  font-size: var(--text-xs);
+  line-height: var(--text-content-line-height);
+}
+
+.typography--size-sm {
+  font-size: var(--text-sm);
+  line-height: var(--text-content-line-height);
+}
+
+.typography--size-base {
+  font-size: var(--text-base);
+  line-height: var(--text-content-line-height);
+}
+
+.typography--size-md {
+  font-size: var(--text-md);
+  line-height: var(--text-content-line-height);
+}
+
+.typography--size-lg {
+  font-size: var(--text-lg);
+  line-height: var(--text-content-line-height);
+}
+
+.typography--size-xl {
+  font-size: var(--text-xl);
+  line-height: var(--text-heading-line-height);
+}
+
+.typography--size-2xl {
+  font-size: var(--text-2xl);
+  line-height: var(--text-heading-line-height);
+}
+
+.typography--size-3xl {
+  font-size: var(--text-3xl);
+  line-height: var(--text-heading-line-height);
+}
+
+.typography--size-4xl {
+  font-size: var(--text-4xl);
+  line-height: var(--text-heading-line-height);
+}
+
+.typography--size-5xl {
+  font-size: var(--text-5xl);
+  line-height: var(--text-heading-line-height);
+}
+
+.typography--size-6xl {
+  font-size: var(--text-6xl);
+  line-height: var(--text-heading-line-height);
+}
+
+.typography--size-7xl {
+  font-size: var(--text-7xl);
+  line-height: var(--text-heading-line-height);
+}
+
+.typography--size-8xl {
+  font-size: var(--text-8xl);
+  line-height: var(--text-heading-line-height);
+}
+
+/* Color Modifiers */
+.typography--color-primary {
+  color: var(--color-primary);
+}
+
+.typography--color-black {
+  color: var(--color-black);
+}
+
+.typography--color-muted {
+  color: var(--color-text-muted);
+}
+.typography--color-grey {
+  color: var(--color-text-muted);
+}
+
+/* Add any additional color classes as needed */
+
+/* Weight Modifiers */
+.typography--weight-light {
+  font-weight: var(--text-light);
+}
+
+.typography--weight-default {
+  font-weight: var(--text-default);
+}
+
+.typography--weight-semibold {
+  font-weight: var(--text-semibold);
+}
+
+.typography--weight-bold {
+  font-weight: var(--text-bold);
+}
+
+.typography--weight-bolder {
+  font-weight: var(--text-bolder);
+}

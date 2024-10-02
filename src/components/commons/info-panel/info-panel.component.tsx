@@ -1,5 +1,8 @@
 import { IconArrowDown, IconArrowUp } from "@ui/icons/icons";
 import styles from "./info-panel.module.css";
+import { FC, PropsWithChildren } from "react";
+import FlexLayout from "@ui/layout/flex";
+import { Text } from "@ui/typography/text.component";
 
 type InfoPanelTitleProps = {
   name: string;
@@ -12,6 +15,10 @@ type InfoPanelValueProps = {
     value: string;
     status: "increased" | "decreased" | "balanced";
   };
+};
+
+type InfoDataGridProps = {
+  title: string;
 };
 
 export const InfoPanelTitle = ({ name, subtitle }: InfoPanelTitleProps) => {
@@ -54,5 +61,25 @@ export const InfoPanelValue = ({ value, change }: InfoPanelValueProps) => {
         &nbsp; vs last 7 days
       </p>
     </div>
+  );
+};
+
+export const InfoDataGrid: FC<PropsWithChildren<InfoDataGridProps>> = ({
+  title,
+  children,
+}) => {
+  return (
+    <FlexLayout
+      gap={"2rem"}
+      justifyContent="space-between"
+      marginBottom={".5rem"}
+    >
+      <Text weight="semibold" size="sm" color="black">
+        {title}
+      </Text>
+      <Text weight="bold" size="sm" color="black">
+        {children}
+      </Text>
+    </FlexLayout>
   );
 };

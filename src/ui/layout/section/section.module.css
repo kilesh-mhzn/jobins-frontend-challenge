@@ -1,0 +1,37 @@
+.section {
+}
+
+/* Gap Modifiers */
+
+.section--gap-small {
+  margin-bottom: 0.5rem;
+}
+
+.section--gap-medium {
+  margin-bottom: 1rem;
+}
+
+.section--gap-large {
+  margin-bottom: 1.5rem;
+}
+
+/* Border Modifiers */
+.section--border-left {
+  border-left: 2px solid var(--color-border-basic);
+  padding-left: 2rem;
+}
+
+.section--border-right {
+  border-right: 2px solid var(--color-border-basic);
+  padding-right: 2rem;
+}
+
+.section--border-top {
+  border-top: 2px solid var(--color-border-basic);
+  padding-top: 2rem;
+}
+
+.section--border-bottom {
+  border-bottom: 2px solid var(--color-border-basic);
+  padding-bottom: 2rem;
+}

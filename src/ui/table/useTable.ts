@@ -3,7 +3,7 @@ import { useState, useMemo, useEffect } from "react";
 export const useTable = <T extends object>(
   initialData: T[] = [],
   initialPage: number = 1,
-  initialPerPage: number = 10
+  initialPerPage: number = 5
 ) => {
   const [data, setData] = useState(initialData);
   const [selectedRows, setSelectedRows] = useState<T[]>([]);

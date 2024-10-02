@@ -56,10 +56,4 @@ export const sidebarData: SidebarItem[] = [
       },
     ],
   },
-
-  {
-    title: "Add Product",
-    path: "/add-product",
-    icon: IconCirclePlus,
-  },
 ];

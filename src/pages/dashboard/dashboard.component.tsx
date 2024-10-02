@@ -12,6 +12,8 @@ import React from "react";
 import styles from "./dashboard.module.css";
 import yen from "@assets/yen.png";
 import Customers from "@components/customer-salses-list/customer-sales-list.component";
+import PersonalDetailComponent from "@components/personal-detail/personal-detail.component";
+import { Section } from "@ui/layout/section/section";
 
 const TotalProfitPanel = () => {
   return (
@@ -126,12 +128,19 @@ const SalesByCountry = () => {
 const Dashboard: React.FC = () => {
   return (
     <>
-      <FlexLayout gap="1rem" alignItems="stretch" marginBottom={"16px"}>
-        <TotalSalesCard />
-        <TotalProfitPanel />
-        <SalesByCountry />
-      </FlexLayout>
-      <Customers />
+      <Section gap="large">
+        <FlexLayout gap="1rem" alignItems="stretch">
+          <TotalSalesCard />
+          <TotalProfitPanel />
+          <SalesByCountry />
+        </FlexLayout>
+      </Section>
+      <Section gap="large">
+        <PersonalDetailComponent />
+      </Section>
+      <Section gap="large">
+        <Customers />
+      </Section>
     </>
   );
 };

@@ -4,7 +4,7 @@
   --color-surface: var(--ll-black-100);
 
   --color-text-base: var(--ll-slate-800);
-  --color-text-muted: var(--ll-black-600);
+  --color-text-muted: var(--ll-grey-600);
 
   --color-primary: var(--ll-blue-950);
   --color-primary-muted: var(--ll-blue-100);
@@ -15,4 +15,6 @@
 
   --color-background: var(--ll-color-white);
   --color-background-muted: var(--ll-slate-100);
+
+  --color-border-basic: var(--ll-grey-200);
 }

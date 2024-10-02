@@ -37,3 +37,7 @@
 .info-panel-value--balanced {
   color: var(--color-text-muted);
 }
+
+.info-data__title {
+  color: var(--color-text-muted);
+}
