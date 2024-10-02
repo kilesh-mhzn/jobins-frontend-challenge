@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
           isActive={true}
           size="lg"
           name="John Doe"
-          img="https://picsum.photos/200/300"
+          img="https://picsum.photos/id/237/200/300"
         />
       </div>
     </nav>

@@ -1,9 +1,11 @@
-import { InfoPanelTitle } from "@components/commons/Info-panel-title/Info-panel-title.component";
-import { InfoPanelValue } from "@components/commons/Info-panel-value/Info-panel-value.component";
 import { Card } from "@ui/card/card.component";
 import dashboardImage from "@assets/dashboard_1.png";
 import FlexLayout from "@ui/layout/flex";
 import styles from "./total-sales-card.module.css"; // Importing module styles
+import {
+  InfoPanelTitle,
+  InfoPanelValue,
+} from "@components/commons/info-panel/info-panel.component";
 
 export const TotalSalesCard = () => {
   return (

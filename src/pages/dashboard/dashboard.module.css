@@ -9,3 +9,22 @@
 .sales-by-country__info {
   flex: 0 0 86px;
 }
+
+
+/* need fixing */
+.info-panel-value__change {
+    display: flex;
+    gap: 0.125rem;
+  }
+  .info-panel-value--increased {
+    color: var(--color-success);
+  }
+  
+  .info-panel-value--decreased {
+    color: var(--color-danger);
+  }
+  
+  .info-panel-value--balanced {
+    color: var(--color-text-muted);
+  }
+  /* end */

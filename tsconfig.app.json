@@ -10,11 +10,11 @@
       "@components/*": ["./src/components/*"],
       "@ui/*": ["./src/ui/*"],
       "@pages/*": ["./src/pages/*"],
-      "@hooks/*": ["./hooks/*"],
+      "@hooks/*": ["./src/hooks/*"],
       "@contexts/*": ["./contexts/*"],
       "@utils": ["./src/utils.ts"],
-      "@services/*": ["./services/*"],
-      "@models/*": ["./models/*"],
+      "@services/*": ["./src/services/*"],
+      // "@models/*": [".src/models/*"],
       "@assets/*": ["./src/assets/*"]
     },
 

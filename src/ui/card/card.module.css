@@ -2,5 +2,5 @@
   background-color: var(--color-background);
   border-radius: 16px;
   box-shadow: var(--ll-shadow);
-  padding: 1.5rem;
+  padding: 1.5rem 2rem;
 }

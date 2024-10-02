@@ -1,21 +1,45 @@
-import { InfoPanelTitle } from "@components/commons/Info-panel-title/Info-panel-title.component";
-import { InfoPanelValue } from "@components/commons/Info-panel-value/Info-panel-value.component";
+import {
+  InfoPanelTitle,
+  InfoPanelValue,
+} from "@components/commons/info-panel/info-panel.component";
 import { TotalSalesCard } from "@components/total-sales-card/total-sales-card.component";
 import { Avatar } from "@ui/avatar/avatar";
 import { Card } from "@ui/card/card.component";
+import { IconChevrondown, IconChevronUp, IconDash } from "@ui/icons/icons";
 import FlexLayout from "@ui/layout/flex";
 import ProgressBar from "@ui/progress-bar/progress-bar.component";
 import React from "react";
 import styles from "./dashboard.module.css";
+import yen from "@assets/yen.png";
+import Customers from "@components/customer-salses-list/customer-sales-list.component";
 
 const TotalProfitPanel = () => {
   return (
     <Card>
-      <InfoPanelTitle name="Total Profit" subtitle="Last 7 days" />
-      <InfoPanelValue
-        value="500k"
-        change={{ status: "decreased", value: "12%" }}
-      />
+      <div
+        style={{
+          display: "grid",
+          alignContent: "space-between",
+          height: "100%",
+        }}
+      >
+        <FlexLayout gap={"1rem"}>
+          <figure className={styles["total-sales-card__image-container"]}>
+            <img
+              src={yen}
+              alt="Yen"
+              className={styles["total-sales-card__image"]}
+            />
+          </figure>
+          <>
+            <InfoPanelTitle name="Total Profit" subtitle="Last 7 days" />
+          </>
+        </FlexLayout>
+        <InfoPanelValue
+          value="500k"
+          change={{ status: "decreased", value: "12%" }}
+        />
+      </div>
     </Card>
   );
 };
@@ -38,7 +62,7 @@ const SalesByCountry = () => {
       sales: "30K",
       change: {
         value: "25.8",
-        status: "increased",
+        status: "decreased",
       },
     },
     {
@@ -48,10 +72,24 @@ const SalesByCountry = () => {
       sales: "30K",
       change: {
         value: "55.8",
-        status: "increased",
+        status: "balanced",
       },
     },
   ];
+  const getDynamicStyle = (status: string) => {
+    return styles[`info-panel-value--${status}`];
+  };
+
+  const getIcon = (status: string) => {
+    switch (status) {
+      case "increased":
+        return <IconChevronUp />;
+      case "decreased":
+        return <IconChevrondown />;
+      default:
+        return <IconDash />;
+    }
+  };
   return (
     <div style={{ flexGrow: "1" }}>
       <Card>
@@ -68,7 +106,14 @@ const SalesByCountry = () => {
 
               <ProgressBar value={item.change.value} />
               <div className={styles["sales-by-country__change"]}>
-                {item.change.value}
+                <span
+                  className={`${
+                    styles["info-panel-value__change"]
+                  } ${getDynamicStyle(item.change.status)}`}
+                >
+                  {getIcon(item.change.status)}
+                  {item.change.value}
+                </span>
               </div>
             </FlexLayout>
           </div>
@@ -80,11 +125,14 @@ const SalesByCountry = () => {
 
 const Dashboard: React.FC = () => {
   return (
-    <FlexLayout gap="1rem" alignItems="stretch">
-      <TotalSalesCard />
-      <TotalProfitPanel />
-      <SalesByCountry />
-    </FlexLayout>
+    <>
+      <FlexLayout gap="1rem" alignItems="stretch" marginBottom={"16px"}>
+        <TotalSalesCard />
+        <TotalProfitPanel />
+        <SalesByCountry />
+      </FlexLayout>
+      <Customers />
+    </>
   );
 };
 
