@@ -3,7 +3,7 @@ import styles from "./info-panel.module.css";
 import { FC, PropsWithChildren } from "react";
 import FlexLayout from "@ui/layout/flex";
 import { Text } from "@ui/typography/text.component";
-import { MetricsChange } from "@services/dashboard.service";
+import { MetricsChange } from "@models/dashboard-metrics.model";
 
 type InfoPanelTitleProps = {
   name: string;

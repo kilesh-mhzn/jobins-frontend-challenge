@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import DashboardService, {
-  TPersonalDetailsResponse,
-} from "@services/dashboard.service";
+import DashboardService from "@services/dashboard.service";
+import { TPersonalDetailsResponse } from "@models/dashboard-metrics.model";
 
 const useUserDetails = () => {
   const [userDetails, setPersonalDetails] =
