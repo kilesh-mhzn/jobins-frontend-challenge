@@ -1,7 +1,5 @@
 import { useState, useEffect, useMemo, useCallback } from "react";
-import CustomerService, {
-  Customer,
-} from "@components/services/customer.service";
+import CustomerService, { Customer } from "@services/customer.service";
 // import { User } from "../models/customer.model";
 
 export const useUserData = () => {

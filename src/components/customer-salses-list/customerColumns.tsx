@@ -1,4 +1,4 @@
-import { Customer } from "@components/services/customer.service";
+import { Customer } from "@services/customer.service";
 import { StatusBadge } from "@components/status-badge/status-badge";
 import { Button } from "@ui/button/button";
 import { Column } from "@ui/table/table";

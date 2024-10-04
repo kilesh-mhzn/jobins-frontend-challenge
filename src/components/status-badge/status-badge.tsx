@@ -1,4 +1,4 @@
-import { STATUS } from "@components/services/customer.service";
+import { STATUS } from "@services/customer.service";
 import { Badge, BadgeType } from "@ui/badge/badge";
 
 type CustomerActivityStatus = "COMPLETED" | "BLOCKED" | "PENDING";
