@@ -1,11 +1,9 @@
-// Pagination.tsx
-
 import React from "react";
 import styles from "./pagination.module.css";
 import { IconLeftChevron, IconRightChevron } from "@ui/icons/icons";
 import FlexLayout from "@ui/layout/flex";
 import { Text } from "@ui/typography/text.component";
-import { Button } from "@ui/button/button"; // Import the Button component
+import { Button } from "@ui/button/button";
 
 type PaginationProps = {
   perPage: number;

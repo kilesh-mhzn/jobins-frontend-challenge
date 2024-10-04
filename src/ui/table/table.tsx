@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./table.module.css";
 import { useTable } from "./useTable";
 import { Pagination } from "@ui/pagination/pagination";
-import FlexLayout from "@ui/layout/flex";
 
 export type Column<T> = {
   id: string;

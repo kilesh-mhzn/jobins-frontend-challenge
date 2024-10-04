@@ -1,5 +1,4 @@
-// Section.tsx
-import React, { FC, PropsWithChildren } from "react";
+import { FC, PropsWithChildren } from "react";
 import styles from "./section.module.css";
 import classNames from "classnames";
 
@@ -30,7 +29,7 @@ const BorderMap: Record<BorderType, string> = {
 export const Section: FC<PropsWithChildren<SectionProps>> = ({
   children,
   gap = "none",
-  border = "none", 
+  border = "none",
 }) => {
   const sectionClass = classNames(
     styles["section"],
