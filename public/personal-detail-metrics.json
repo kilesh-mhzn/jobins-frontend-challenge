@@ -1,0 +1,23 @@
+{
+  "data": {
+    "personalInformation": {
+      "name": "Robert Fox",
+      "email": "robert@gmail.com",
+      "contactNumber": "(201) 555-0124",
+      "dateOfBirth": "1 Jan, 1985",
+      "memberSince": "3 March, 2023"
+    },
+    "shippingAddress": {
+      "address": "3517 W. Gray St.",
+      "city": "Utica",
+      "state": "Pennsylvania",
+      "zipCode": "57867"
+    },
+    "orderSummary": {
+      "totalOrder": 150,
+      "completed": 140,
+      "canceled": 10
+    }
+  },
+  "message": "Successfully fetched"
+}

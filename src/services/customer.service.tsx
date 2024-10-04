@@ -1,8 +1,9 @@
-// import { User } from "models/customer.model";
+import { apiClient } from "../api/client"; // Import the APIClient
+
 export enum STATUS {
   PENDING = "PENDING",
   COMPLETED = "COMPLETED",
-  BLOCKED = "BLOCKED",
+  CANCELLED = "CANCELLED",
 }
 
 export type Customer = {
@@ -15,22 +16,20 @@ export type Customer = {
 };
 
 class CustomerService {
-  private baseUrl: string = "users.json";
+  private GET_ORDERS: string = "orders.json";
 
   constructor() {}
   getCustomerStatus = (customer: Customer): STATUS => {
     return customer.status as STATUS;
   };
-  async getCustomers<T>({ searchTerm = "" }): Promise<T> {
+  async getCustomers({
+    searchTerm = "",
+  }: {
+    searchTerm?: string;
+  }): Promise<Customer[]> {
     try {
-      const response = await fetch(`/${this.baseUrl}`, {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      });
-
-      const data = await response.json();
+      const response = await apiClient.get<Customer[]>(`/${this.GET_ORDERS}`);
+      const data = response.data;
       const customerData = data
         .map((customer: Customer) => {
           return customer;
@@ -47,7 +46,6 @@ class CustomerService {
       return customerData;
     } catch (error) {
       console.error(error);
-
       throw new Error("Error fetching data");
     }
   }

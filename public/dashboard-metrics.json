@@ -1,0 +1,43 @@
+{
+  "data": {
+    "totalSalesAndCosts": {
+      "amount": "$350K",
+      "change": "8.56%",
+      "period": "Last 7 days"
+    },
+    "totalProfit": {
+      "amount": "50K",
+      "change": {
+        "value": "16.2",
+        "status": "decreased"
+      }
+    },
+    "countryMetrics": [
+      {
+        "country": "United States",
+        "value": "30K",
+        "change": {
+          "value": "25.8",
+          "status": "increased"
+        }
+      },
+      {
+        "country": "Brazil",
+        "value": "26K",
+        "change": {
+          "value": "16.2",
+          "status": "decreased"
+        }
+      },
+      {
+        "country": "Australia",
+        "value": "17K",
+        "change": {
+          "value": "11.9",
+          "status": "balanced"
+        }
+      }
+    ]
+  },
+  "message": "Successfully fetched"
+}

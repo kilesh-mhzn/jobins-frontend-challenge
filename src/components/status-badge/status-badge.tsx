@@ -1,7 +1,7 @@
 import { STATUS } from "@services/customer.service";
 import { Badge, BadgeType } from "@ui/badge/badge";
 
-type CustomerActivityStatus = "COMPLETED" | "BLOCKED" | "PENDING";
+type CustomerActivityStatus = "COMPLETED" | "CANCELLED" | "PENDING";
 
 type StatusBadgeProps = {
   type: CustomerActivityStatus;
@@ -10,7 +10,7 @@ type StatusBadgeProps = {
 export const StatusBadge = ({ type }: StatusBadgeProps) => {
   const badgeType: Record<CustomerActivityStatus, BadgeType> = {
     COMPLETED: "success",
-    BLOCKED: "danger",
+    CANCELLED: "danger",
     PENDING: "warning",
   };
 
