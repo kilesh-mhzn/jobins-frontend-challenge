@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./badge.module.css";
 import classnames from "classnames";
 

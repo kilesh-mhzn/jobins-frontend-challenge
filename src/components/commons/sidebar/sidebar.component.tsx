@@ -3,6 +3,7 @@ import { sidebarData, MenuItemWithGroup, MenuItem } from "./sidebar-data";
 import styles from "./sidebar.module.css";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import classnames from "classnames"; 
 
 const logo_alt =
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAeFBMVEVHcEz////////////////////////////////////////////t7e2FhYWqqqoFBQX+8OrzZgX4spPDw8Pi4uL79/XyVgD4qIVISEi9vb3T09P5vKIeHh794dWZmZksLCz1jFf6x7L81MNvb2/2mW5cXFxqamr0fz8Oy4gNAAAADHRSTlMAM4XE5/9h7RjfPz4pFiaJAAABIklEQVR4AWySVQLDIBTAqGQu1F0n3P+E01em+Q0aUBbH9XzwPddR38zmWOazD7VY8sFyoSwrflj/dZvtBoCVrMk7u/0OAJ4r2/3QQQjRtO/dzXgSJ+g0gzzmyf3Mcodkn0OiKfbldKPb3RG2OwgqdvUkcZSLEEc0aUVbFzQaAFd5CF17kyFtt6MfAPCULy6pt4xBxrZrCTMAfAWMGtjUh5s8cpfVU/KQAxB3J4ag59xtCSfpg86AssupAsO9kBlkWQ8wIrMggA06TeRALjDeq3UdST8C9LKq+4zQj0R1zZMqmCJIPjMQSdMs0JLPhs/MCJAMgalsePtkOgsCEwTHhvAoT/b52DoBuEcEFv+/UJWOsFLC+tu+ueuwJU3CiRpvdgAAZAEZGcfC7tYAAAAASUVORK5CYII=";
@@ -14,9 +15,9 @@ export const Sidebar = () => {
     <NavLink
       key={path}
       className={({ isActive }) =>
-        `${styles.sidebar__nav} ${
-          isActive ? styles["sidebar__nav--active"] : ""
-        }`
+        classnames(styles.sidebar__nav, {
+          [styles["sidebar__nav--active"]]: isActive,
+        })
       }
       to={path}
     >
@@ -47,15 +48,17 @@ export const Sidebar = () => {
 
   return (
     <aside
-      className={`${styles.sidebar} ${
-        isCollapsed ? styles["sidebar--collapsed"] : ""
-      }`}
+      className={classnames(styles.sidebar, {
+        [styles["sidebar--collapsed"]]: isCollapsed,
+      })}
     >
       <header className={styles["sidebar__header"]}>
         {isCollapsed ? <img src={logo_alt} alt="Logo" /> : <IconLogo />}
         <button
-          className={styles["sidebar__header-button"]}
-          onClick={() => setIsCollapsed(!isCollapsed)}
+          className={classnames(styles["sidebar__header-button"], {
+            [styles["sidebar__header-button--rotated"]]: isCollapsed,
+          })}
+          onClick={() => setIsCollapsed((prev) => !prev)}
         >
           <IconIndentIncrease />
         </button>

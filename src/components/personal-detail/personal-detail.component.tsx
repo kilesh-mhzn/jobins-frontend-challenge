@@ -7,7 +7,6 @@ import { Card } from "@ui/card/card.component";
 import FlexLayout from "@ui/layout/flex";
 import { Section } from "@ui/layout/section/section";
 import { Text } from "@ui/typography/text.component";
-import React from "react";
 
 const PersonalDetailComponent = () => {
   return (
