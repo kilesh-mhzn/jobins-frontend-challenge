@@ -1,5 +1,6 @@
 import { Customer } from "@components/services/customer.service";
 import { StatusBadge } from "@components/status-badge/status-badge";
+import { Button } from "@ui/button/button";
 import { Column } from "@ui/table/table";
 
 export const customerColumns = (): Column<Customer>[] => {
@@ -35,9 +36,18 @@ export const customerColumns = (): Column<Customer>[] => {
       id: "action",
       title: "Action",
       render: () => {
-        return <button>View Detail</button>;
+        return (
+          <Button
+            ghost
+            onClick={function (): void {
+              throw new Error("Function not implemented.");
+            }}
+          >
+            View Detail
+          </Button>
+        );
       },
-      customWidth: "120",
+      customWidth: "150",
     },
   ];
 };

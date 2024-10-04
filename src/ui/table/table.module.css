@@ -27,9 +27,10 @@
   background-color: var(--color-background);
   text-align: start;
   text-transform: capitalize;
-  font-weight: 700;
+  font-weight: var(--text-semibold);
   line-height: 140%;
   white-space: nowrap;
+  color: var(--color-text-muted);
 }
 
 .tableWrapper tr:hover {

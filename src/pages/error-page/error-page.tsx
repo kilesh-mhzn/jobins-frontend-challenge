@@ -3,6 +3,7 @@ import { useRouteError } from "react-router-dom";
 import styles from "./error-page.module.css";
 
 import { useNavigate } from "react-router-dom";
+import { Button } from "@ui/button/button";
 
 const ErrorPage: React.FC = () => {
   const error: unknown = useRouteError();
@@ -22,7 +23,7 @@ const ErrorPage: React.FC = () => {
           {(error as Error)?.message ||
             (error as { statusText?: string })?.statusText}
         </p>
-        <button onClick={handleGoBack}>Go Back</button>{" "}
+        <Button onClick={handleGoBack}>Go Back</Button>
       </section>
     </main>
   );
