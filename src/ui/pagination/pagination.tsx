@@ -65,6 +65,7 @@ export const Pagination: React.FC<PaginationProps> = ({
             key={index + 1}
             onClick={() => onPageChange(index + 1)}
             ghost={page !== index + 1}
+            {...(page === index + 1 && { color: "primary" })}
           >
             <div style={{ padding: "0 8px" }}>{index + 1}</div>
           </Button>

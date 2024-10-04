@@ -1,4 +1,4 @@
-import { STATUS } from "@services/customer.service";
+import { STATUS } from "@models/orders.model";
 import { Badge, BadgeType } from "@ui/badge/badge";
 
 type CustomerActivityStatus = "COMPLETED" | "CANCELLED" | "PENDING";

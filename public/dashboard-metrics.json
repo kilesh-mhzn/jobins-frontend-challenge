@@ -1,24 +1,24 @@
 {
   "data": {
     "totalSalesAndCosts": {
-      "amount": "$350K",
+      "amount": "350_000",
       "change": {
-        "value": "16.2",
+        "value": "16.2%",
         "status": "decreased"
       }
     },
     "totalProfit": {
-      "amount": "50K",
+      "amount": "500_000",
       "change": {
-        "value": "16.2",
-        "status": "decreased"
+        "value": "24%",
+        "status": "increased"
       }
     },
     "countryMetrics": [
       {
         "country": "United States",
         "flag": "https://flagsapi.com/US/flat/64.png",
-        "value": "30K",
+        "value": "30_000",
         "change": {
           "value": "25.8",
           "status": "increased"
@@ -27,18 +27,18 @@
       {
         "country": "Brazil",
         "flag": "https://flagsapi.com/BR/flat/64.png",
-        "value": "26K",
+        "value": "26_000",
         "change": {
-          "value": "16.2",
+          "value": "65",
           "status": "decreased"
         }
       },
       {
         "country": "Australia",
         "flag": "https://flagsapi.com/AU/flat/64.png",
-        "value": "17K",
+        "value": "17_000",
         "change": {
-          "value": "11.9",
+          "value": "35",
           "status": "balanced"
         }
       }

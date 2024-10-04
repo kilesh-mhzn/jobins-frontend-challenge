@@ -15,6 +15,7 @@ export default defineConfig({
       "@models": "/src/models",
       "@utils": "/src/utils",
       "@assets": "/src/assets",
+      "@api": "/src/api/client",
     },
   },
 });

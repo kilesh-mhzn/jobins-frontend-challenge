@@ -10,12 +10,13 @@ const ButtonSizeMap: Record<ButtonSize, string> = {
   large: styles["button--large"],
 };
 
-type ButtonColor = "primary" | "secondary" | "white";
+type ButtonColor = "primary" | "secondary" | "white" | "none";
 
 const ButtonColorMap: Record<ButtonColor, string> = {
   primary: styles["button--primary"],
   secondary: styles["button--secondary"],
   white: styles["button--white"],
+  none: "",
 };
 type ButtonProps = {
   children?: ReactNode;
@@ -35,7 +36,7 @@ export const Button = ({
   type = "button",
   disabled = false,
   ghost,
-  color = "primary",
+  color = "none",
   outline = false,
 }: ButtonProps) => {
   return (

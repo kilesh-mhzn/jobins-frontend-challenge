@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo, useCallback } from "react";
-import CustomerService, { Order } from "@services/customer.service";
+import CustomerService from "@services/customer.service";
+import { Order } from "@models/orders.model";
 
 export const useOrderData = () => {
   const [data, setData] = useState<Order[]>([]);

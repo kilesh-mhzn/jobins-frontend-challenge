@@ -7,7 +7,7 @@
   align-items: center;
   background-color: var(--color-background);
   font-size: var(--text-base);
-  color: var(--color-primary);
+  color: var(--color-text-muted);
   font-weight: var(--text-semibold);
   outline: none;
   border: none;
@@ -15,15 +15,6 @@
   cursor: pointer;
   transition: all 0.1s ease-in;
   border-radius: 4px;
-}
-
-.pagination__btn--disabled {
-  background-color: var(--color-disabled);
-  cursor: not-allowed;
-}
-
-.pagination__btn:not(.pagination__btn--disabled):hover {
-  background-color: var(--color-fields);
 }
 
 .pagination__select {

@@ -1,12 +1,13 @@
 import { Card } from "@ui/card/card.component";
 import dashboardImage from "@assets/dashboard_1.png";
 import FlexLayout from "@ui/layout/flex";
-import styles from "./total-sales-card.module.css"; // Importing module styles
+import styles from "./total-sales-card.module.css";
 import {
   InfoPanelTitle,
   InfoPanelValue,
 } from "@components/commons/info-panel/info-panel.component";
-import { TotalSalesAndCosts } from "@services/dashboard.service";
+import { TotalSalesAndCosts } from "@models/dashboard-metrics.model";
+import { formatAmount } from "@utils";
 
 interface TotalSalesCardProps {
   data?: TotalSalesAndCosts;
@@ -35,7 +36,10 @@ export const TotalSalesCard: React.FC<TotalSalesCardProps> = ({ data }) => {
         </figure>
         <div className={styles["total-sales-card__info"]}>
           <InfoPanelTitle name="Total Sales & Cost" subtitle="Last 7 days" />
-          <InfoPanelValue value={data.amount} change={data.change} />
+          <InfoPanelValue
+            value={`$${formatAmount(data.amount)}`}
+            change={data.change}
+          />
         </div>
       </FlexLayout>
     </Card>

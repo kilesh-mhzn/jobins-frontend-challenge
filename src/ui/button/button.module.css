@@ -30,6 +30,10 @@
 
 .button.button--ghost {
   background-color: unset;
+  color: var(--color-text-muted);
+}
+.button.button--ghost.button--primary {
+  background-color: unset;
   color: var(--color-primary);
 }
 

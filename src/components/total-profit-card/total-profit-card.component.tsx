@@ -6,8 +6,9 @@ import { Card } from "@ui/card/card.component";
 import FlexLayout from "@ui/layout/flex";
 import yen from "@assets/yen.png";
 import styles from "./total-profit-card.module.css";
-import { TotalProfit } from "@services/dashboard.service";
 import React from "react";
+import { TotalProfit } from "@models/dashboard-metrics.model";
+import { formatAmount } from "@utils";
 
 interface TotalProfitPanelProps {
   data?: TotalProfit;
@@ -32,8 +33,8 @@ export const TotalProfitPanel: React.FC<TotalProfitPanelProps> = ({ data }) => {
           <InfoPanelTitle name="Total Profit" subtitle="Last 7 days" />
         </FlexLayout>
         <InfoPanelValue
-          value={data?.change.value}
-          change={{ status: data?.change.status, value: "12%" }}
+          value={`$${formatAmount(data.amount)}`}
+          change={{ status: data?.change.status, value: data.change.value }}
         />
       </div>
     </Card>

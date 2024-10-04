@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import DashboardService, {
-  TDashboardMetricsResponse,
-} from "@services/dashboard.service";
+import DashboardService from "@services/dashboard.service";
+import { TDashboardMetricsResponse } from "@models/dashboard-metrics.model";
 
 const useDashboardMetrics = () => {
   const [metrics, setMetrics] = useState<TDashboardMetricsResponse | null>(

@@ -1,5 +1,3 @@
-// import { format } from "date-fns";
-
 export const extractInitials = (fullName: string) => {
   const split = fullName?.split(" ");
   const first = split ? split[0] : ["A", "A"];
@@ -8,33 +6,24 @@ export const extractInitials = (fullName: string) => {
   return `${first[0]}${last[0]}`.toUpperCase();
 };
 
-// interface DateFormatterOptions {
-//   formatString?: string;
-// }
+export const formatAmount = (amount: string): string => {
+  const numericAmount = parseFloat(amount.replace(/[^0-9.]/g, ""));
 
-// export const formatDate = (
-//   timestamp: number | string,
-//   options?: DateFormatterOptions
-// ): string => {
-//   const defaultFormatString = "yyyy-MM-dd";
-//   const { formatString = defaultFormatString } = options || {};
+  if (isNaN(numericAmount)) {
+    return "0";
+  }
 
-//   const date = new Date(Number(timestamp) * 1000);
-//   return format(date, formatString);
-// };
+  const units = [
+    { value: 1_000_000_000, suffix: "B" },
+    { value: 1_000_000, suffix: "M" },
+    { value: 1_000, suffix: "k" },
+  ];
 
-// // eslint-disable-next-line @typescript-eslint/no-explicit-any
-// export const debounce = <T extends (...args: any[]) => void>(
-//   mainFunction: T,
-//   delay: number
-// ) => {
-//   let timer: ReturnType<typeof setTimeout>;
+  for (const { value, suffix } of units) {
+    if (numericAmount >= value) {
+      return (numericAmount / value).toFixed(1).replace(/\.0$/, "") + suffix;
+    }
+  }
 
-//   return function (...args: Parameters<T>) {
-//     clearTimeout(timer);
-
-//     timer = setTimeout(() => {
-//       mainFunction(...args);
-//     }, delay);
-//   };
-// };
+  return numericAmount.toString();
+};

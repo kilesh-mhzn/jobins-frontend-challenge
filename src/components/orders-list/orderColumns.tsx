@@ -1,5 +1,5 @@
 import { StatusBadge } from "@components/status-badge/status-badge";
-import { Order } from "@services/customer.service";
+import { Order } from "@models/orders.model";
 import { Button } from "@ui/button/button";
 import { Column } from "@ui/table/table";
 
@@ -38,6 +38,7 @@ export const orderColumns = (): Column<Order>[] => {
       render: () => {
         return (
           <Button
+            color="primary"
             ghost
             onClick={function (): void {
               throw new Error("Function not implemented.");

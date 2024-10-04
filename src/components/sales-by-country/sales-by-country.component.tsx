@@ -5,7 +5,8 @@ import { InfoPanelTitle } from "@components/commons/info-panel/info-panel.compon
 import { Avatar } from "@ui/avatar/avatar";
 import { Card } from "@ui/card/card.component";
 import FlexLayout from "@ui/layout/flex";
-import { CountryMetric } from "@services/dashboard.service";
+import { CountryMetric } from "@models/dashboard-metrics.model";
+import { formatAmount } from "@utils";
 
 interface SalesByCountryProps {
   data?: CountryMetric[];
@@ -46,7 +47,10 @@ export const SalesByCountry: React.FC<SalesByCountryProps> = ({ data }) => {
               </div>
 
               <div className={styles["sales-by-country__info"]}>
-                <InfoPanelTitle name={item.value} subtitle={item.country} />
+                <InfoPanelTitle
+                  name={formatAmount(item.value)}
+                  subtitle={item.country}
+                />
               </div>
 
               <ProgressBar value={item.change.value} />
