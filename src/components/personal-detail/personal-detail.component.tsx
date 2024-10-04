@@ -14,7 +14,7 @@ const PersonalDetailComponent = () => {
     <Card>
       <FlexLayout justifyContent="space-between">
         <Section>
-          <FlexLayout gap={"1rem"} alignItems="center">
+          <FlexLayout gap={"1rem"} alignItems="center" height={"100%"}>
             <Avatar size="xl" name={"AK"} />
             <InfoPanelTitle name="John Doe" subtitle={"JohnDoe@gmail.com"} />
           </FlexLayout>

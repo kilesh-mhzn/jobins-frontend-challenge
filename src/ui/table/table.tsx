@@ -116,15 +116,13 @@ export const Table = <T extends object>({
           ))}
         </tbody>
       </table>
-      <FlexLayout padding={"0 0.625rem"} justifyContent="flex-end">
-        <Pagination
-          perPage={perPage}
-          page={page}
-          totalItems={data.length}
-          onPageChange={onPageChange}
-          onPerPageChange={onPerPageChange}
-        />
-      </FlexLayout>
+      <Pagination
+        perPage={perPage}
+        page={page}
+        totalItems={data.length}
+        onPageChange={onPageChange}
+        onPerPageChange={onPerPageChange}
+      />
     </div>
   );
 };
