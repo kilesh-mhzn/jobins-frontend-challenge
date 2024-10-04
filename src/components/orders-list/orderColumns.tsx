@@ -1,9 +1,9 @@
-import { Customer } from "@services/customer.service";
 import { StatusBadge } from "@components/status-badge/status-badge";
+import { Order } from "@services/customer.service";
 import { Button } from "@ui/button/button";
 import { Column } from "@ui/table/table";
 
-export const customerColumns = (): Column<Customer>[] => {
+export const orderColumns = (): Column<Order>[] => {
   return [
     {
       id: "id",

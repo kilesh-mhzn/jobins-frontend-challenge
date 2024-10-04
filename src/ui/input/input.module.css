@@ -1,0 +1,17 @@
+.inputField {
+  display: inline-block;
+  background-color: var(--color-background);
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: none;
+  color: var(--text-base);
+  padding: 8px 12px;
+}
+
+.inputField:focus {
+  /* outline: 2px solid var(--color-table-row-hover); */
+  outline: 2px solid var(--ll-amber-400);
+}
+.fullWidth {
+  width: 100%;
+}

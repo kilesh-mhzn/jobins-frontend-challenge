@@ -1,13 +1,12 @@
 .button {
-  background-color: var(--color-primary);
   font-size: var(--text-sm);
-  color: var(--ll-color-white);
   border-radius: 4px;
   outline: none;
   border: none;
   padding: 4px 8px;
   cursor: pointer;
-  transition: background 0.1s ease-in;
+  display: flex;
+  align-items: center;
 }
 
 .button--small {
@@ -25,22 +24,13 @@
   padding: 6px 12px;
 }
 
-.button:hover {
-  background-color: var(--color-primary);
-}
-
 .button:active {
   outline: 2px solid var(--color-button-outline);
 }
 
-.button--ghost {
-  background-color: transparent;
+.button.button--ghost {
+  background-color: unset;
   color: var(--color-primary);
-}
-
-.button--ghost:hover {
-  background-color: var(--color-primary);
-  color: var(--ll-color-white);
 }
 
 .button--outline {
@@ -52,4 +42,15 @@
 .button--outline:hover {
   background-color: var(--color-primary);
   color: var(--ll-color-white);
+}
+
+.button--primary {
+  background-color: var(--color-primary);
+  color: var(--ll-color-white);
+}
+
+.button--white {
+  background-color: var(--color-background);
+  color: var(--color-text-muted);
+  box-shadow: var(--ll-shadow);
 }

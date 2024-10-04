@@ -1,9 +1,8 @@
 import { useState, useEffect, useMemo, useCallback } from "react";
-import CustomerService, { Customer } from "@services/customer.service";
-// import { User } from "../models/customer.model";
+import CustomerService, { Order } from "@services/customer.service";
 
-export const useUserData = () => {
-  const [data, setData] = useState<Customer[]>([]);
+export const useOrderData = () => {
+  const [data, setData] = useState<Order[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
@@ -14,10 +13,10 @@ export const useUserData = () => {
     async (term: string) => {
       try {
         setLoading(true);
-        const result: Customer[] = await customerService.getCustomers({
+        const response = await customerService.getCustomers({
           searchTerm: term,
         });
-        setData(result);
+        setData(response.data);
       } catch (err) {
         console.log(err);
 

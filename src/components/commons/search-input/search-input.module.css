@@ -1,0 +1,7 @@
+.search-input input {
+  display: block;
+  background-color: var(--color-background);
+  box-shadow: var(--ll-shadow);
+  border-radius: 4px;
+  overflow: hidden;
+}

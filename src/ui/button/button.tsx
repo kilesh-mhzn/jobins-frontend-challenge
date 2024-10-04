@@ -3,12 +3,20 @@ import { ReactNode } from "react";
 import styles from "./button.module.css";
 
 type ButtonSize = "small" | "medium" | "large";
+
 const ButtonSizeMap: Record<ButtonSize, string> = {
   small: styles["button--small"],
   medium: styles["button--medium"],
   large: styles["button--large"],
 };
 
+type ButtonColor = "primary" | "secondary" | "white";
+
+const ButtonColorMap: Record<ButtonColor, string> = {
+  primary: styles["button--primary"],
+  secondary: styles["button--secondary"],
+  white: styles["button--white"],
+};
 type ButtonProps = {
   children?: ReactNode;
   onClick: () => void;
@@ -17,6 +25,7 @@ type ButtonProps = {
   disabled?: boolean;
   ghost?: boolean;
   outline?: boolean;
+  color?: ButtonColor;
 };
 
 export const Button = ({
@@ -26,14 +35,20 @@ export const Button = ({
   type = "button",
   disabled = false,
   ghost,
+  color = "primary",
   outline = false,
 }: ButtonProps) => {
   return (
     <button
-      className={classNames(styles.button, ButtonSizeMap[size], {
-        [styles["button--ghost"]]: ghost && !outline,
-        [styles["button--outline"]]: outline,
-      })}
+      className={classNames(
+        styles.button,
+        ButtonSizeMap[size],
+        ButtonColorMap[color],
+        {
+          [styles["button--ghost"]]: ghost && !outline,
+          [styles["button--outline"]]: outline,
+        }
+      )}
       onClick={onClick}
       type={type}
       disabled={disabled}

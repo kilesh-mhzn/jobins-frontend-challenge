@@ -7,10 +7,10 @@ import { Section } from "@ui/layout/section/section";
 import TabContent from "@ui/tabs/tab-content/tab-content.component";
 import React, { useState } from "react";
 import useDashboardMetrics from "@hooks/useDashboardMetrics";
-import Customers from "@components/customer-salses-list/customer-sales-list.component";
+import Orders from "@components/orders-list/orders-list.component";
 
 const tabs = [
-  { label: "All Orders", content: <Customers /> },
+  { label: "All Orders", content: <Orders /> },
   { label: "Completed", content: <div>Completed Tabs</div> },
   { label: "Cancelled", content: <div>Cancelled Tabs</div> },
 ];

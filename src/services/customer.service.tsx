@@ -1,4 +1,4 @@
-import { apiClient } from "../api/client";
+import { apiClient, ApiResponse } from "../api/client";
 
 export enum STATUS {
   PENDING = "PENDING",
@@ -6,7 +6,7 @@ export enum STATUS {
   CANCELLED = "CANCELLED",
 }
 
-export type Customer = {
+export type Order = {
   id: string;
   customerName: string;
   date: string;
@@ -19,35 +19,30 @@ class CustomerService {
   private GET_ORDERS: string = "orders.json";
 
   constructor() {}
-  getCustomerStatus = (customer: Customer): STATUS => {
+  getCustomerStatus = (customer: Order): STATUS => {
     return customer.status as STATUS;
   };
   async getCustomers({
     searchTerm = "",
   }: {
     searchTerm?: string;
-  }): Promise<Customer[]> {
-    try {
-      const response = await apiClient.get<Customer[]>(`/${this.GET_ORDERS}`);
-      const data = response.data;
-      const customerData = data
-        .map((customer: Customer) => {
-          return customer;
-        })
-        .filter((fd: Customer) => {
-          const searchTermsArray = searchTerm.toLowerCase().split(" ");
+  }): Promise<ApiResponse<Order[]>> {
+    const response = await apiClient.get<Order[]>(`/${this.GET_ORDERS}`);
+    const data = response.data;
+    const customerData = data
+      .map((customer: Order) => {
+        return customer;
+      })
+      .filter((fd: Order) => {
+        const searchTermsArray = searchTerm.toLowerCase().split(" ");
 
-          return searchTermsArray.every((term) =>
-            Object.values(fd).some((value) =>
-              String(value).toLowerCase().includes(term)
-            )
-          );
-        });
-      return customerData;
-    } catch (error) {
-      console.error(error);
-      throw new Error("Error fetching data");
-    }
+        return searchTermsArray.every((term) =>
+          Object.values(fd).some((value) =>
+            String(value).toLowerCase().includes(term)
+          )
+        );
+      });
+    return { ...response, data: customerData };
   }
 }
 
