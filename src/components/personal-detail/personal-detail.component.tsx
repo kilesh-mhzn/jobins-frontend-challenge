@@ -39,7 +39,11 @@ const PersonalDetailComponent: React.FC<PersonalDetailProps> = ({
 
   return (
     <Card>
-      <FlexLayout justifyContent="space-between">
+      <FlexLayout
+        justifyContent="space-between"
+        gap={"0.75rem"}
+        flexWrap="wrap"
+      >
         <Section>
           <FlexLayout gap={"1rem"} alignItems="center" height={"100%"}>
             <Avatar size="xl" name={personalInformation.name} />

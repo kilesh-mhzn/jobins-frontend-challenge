@@ -26,7 +26,7 @@ const Dashboard: React.FC = () => {
       ) : (
         <>
           <Section gap="large">
-            <FlexLayout gap="1rem" alignItems="stretch">
+            <FlexLayout gap="1rem" alignItems="stretch" flexWrap="wrap">
               <TotalSalesCard data={metrics?.totalSalesAndCosts} />
               <TotalProfitPanel data={metrics?.totalProfit} />
               <SalesByCountry data={metrics?.countryMetrics} />
