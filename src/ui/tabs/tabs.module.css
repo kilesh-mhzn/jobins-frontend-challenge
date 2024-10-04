@@ -1,0 +1,23 @@
+.tabs__header {
+  display: flex;
+  margin-bottom: -24px;
+}
+
+.tabs__tab {
+  padding: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transition: color 0.3s;
+}
+
+.tabs__tab--active {
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.tabs__content {
+  padding: 20px 0;
+  background: var(--color-surface);
+}

@@ -6,9 +6,24 @@ import { Avatar } from "@ui/avatar/avatar";
 import { Card } from "@ui/card/card.component";
 import FlexLayout from "@ui/layout/flex";
 import { Section } from "@ui/layout/section/section";
+import TabNav from "@ui/tabs/tab-nav/tab-nav.component";
 import { Text } from "@ui/typography/text.component";
 
-const PersonalDetailComponent = () => {
+interface Tab {
+  label: string;
+}
+
+interface PersonalDetailProps {
+  activeTab: number;
+  setActiveTab: (index: number) => void;
+  tabs: Tab[];
+}
+
+const PersonalDetailComponent: React.FC<PersonalDetailProps> = ({
+  activeTab,
+  setActiveTab,
+  tabs,
+}) => {
   return (
     <Card>
       <FlexLayout justifyContent="space-between">
@@ -48,6 +63,7 @@ const PersonalDetailComponent = () => {
           </FlexLayout>
         </Section>
       </FlexLayout>
+      <TabNav tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
     </Card>
   );
 };
