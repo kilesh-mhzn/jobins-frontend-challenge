@@ -1,6 +1,6 @@
 import { Customer } from "@components/services/customer.service";
+import { StatusBadge } from "@components/status-badge/status-badge";
 import { Column } from "@ui/table/table";
-
 
 export const customerColumns = (): Column<Customer>[] => {
   return [
@@ -27,7 +27,17 @@ export const customerColumns = (): Column<Customer>[] => {
     {
       id: "status",
       title: "Status",
-      render: (rowData) => rowData.status,
+      render: (rowData) => {
+        return <StatusBadge type={rowData.status} />;
+      },
+    },
+    {
+      id: "action",
+      title: "Action",
+      render: () => {
+        return <button>View Detail</button>;
+      },
+      customWidth: "120",
     },
   ];
 };

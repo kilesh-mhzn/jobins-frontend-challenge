@@ -10,7 +10,7 @@
   {
     "id": 4564,
     "customerName": "Kristen O Blake",
-    "status": "PENDING",
+    "status": "COMPLETED",
     "address": "7561 Sed, St.",
     "method": "cc",
     "date": "2024/2/2"
@@ -18,7 +18,7 @@
   {
     "id": 4564,
     "customerName": "Kristen O Blake",
-    "status": "PENDING",
+    "status": "BLOCKED",
     "address": "7561 Sed, St.",
     "method": "cc",
     "date": "2024/2/2"

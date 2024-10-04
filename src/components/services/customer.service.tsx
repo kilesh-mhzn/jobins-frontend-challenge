@@ -1,7 +1,8 @@
 // import { User } from "models/customer.model";
-enum STATUS {
+export enum STATUS {
   PENDING = "PENDING",
   COMPLETED = "COMPLETED",
+  BLOCKED = "BLOCKED",
 }
 
 export type Customer = {
