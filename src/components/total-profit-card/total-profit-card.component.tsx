@@ -6,8 +6,22 @@ import { Card } from "@ui/card/card.component";
 import FlexLayout from "@ui/layout/flex";
 import yen from "@assets/yen.png";
 import styles from "./total-profit-card.module.css";
+import { TotalProfit } from "@services/dashboard.service";
+import React from "react";
 
-export const TotalProfitPanel = () => {
+interface TotalProfitPanelProps {
+  data?: TotalProfit;
+}
+export const TotalProfitPanel: React.FC<TotalProfitPanelProps> = ({ data }) => {
+  if (!data) {
+    return (
+      <Card>
+        <div className={styles["total-sales-card__loading"]}>
+          <p>Something went wrong loading metrics</p>
+        </div>
+      </Card>
+    );
+  }
   return (
     <Card>
       <div className={styles["total-profit-card"]}>
@@ -18,8 +32,8 @@ export const TotalProfitPanel = () => {
           <InfoPanelTitle name="Total Profit" subtitle="Last 7 days" />
         </FlexLayout>
         <InfoPanelValue
-          value="500k"
-          change={{ status: "decreased", value: "12%" }}
+          value={data?.change.value}
+          change={{ status: data?.change.status, value: "12%" }}
         />
       </div>
     </Card>

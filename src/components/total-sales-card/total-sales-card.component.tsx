@@ -6,8 +6,23 @@ import {
   InfoPanelTitle,
   InfoPanelValue,
 } from "@components/commons/info-panel/info-panel.component";
+import { TotalSalesAndCosts } from "@services/dashboard.service";
 
-export const TotalSalesCard = () => {
+interface TotalSalesCardProps {
+  data?: TotalSalesAndCosts;
+}
+
+export const TotalSalesCard: React.FC<TotalSalesCardProps> = ({ data }) => {
+  if (!data) {
+    return (
+      <Card>
+        <div className={styles["total-sales-card__loading"]}>
+          <p>Something went wrong loading metrics</p>
+        </div>
+      </Card>
+    );
+  }
+
   return (
     <Card>
       <FlexLayout gap={"2rem"} height={"100%"} alignItems="center">
@@ -20,11 +35,7 @@ export const TotalSalesCard = () => {
         </figure>
         <div className={styles["total-sales-card__info"]}>
           <InfoPanelTitle name="Total Sales & Cost" subtitle="Last 7 days" />
-
-          <InfoPanelValue
-            value="300k"
-            change={{ status: "increased", value: "21%" }}
-          />
+          <InfoPanelValue value={data.amount} change={data.change} />
         </div>
       </FlexLayout>
     </Card>

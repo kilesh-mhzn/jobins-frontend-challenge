@@ -3,6 +3,7 @@ import styles from "./info-panel.module.css";
 import { FC, PropsWithChildren } from "react";
 import FlexLayout from "@ui/layout/flex";
 import { Text } from "@ui/typography/text.component";
+import { MetricsChange } from "@services/dashboard.service";
 
 type InfoPanelTitleProps = {
   name: string;
@@ -13,7 +14,7 @@ type InfoPanelValueProps = {
   value: string;
   change: {
     value: string;
-    status: "increased" | "decreased" | "balanced";
+    status: MetricsChange;
   };
 };
 

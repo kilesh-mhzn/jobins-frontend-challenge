@@ -1,4 +1,4 @@
-import { apiClient } from "../api/client"; // Import the APIClient
+import { apiClient } from "../api/client";
 
 export enum STATUS {
   PENDING = "PENDING",

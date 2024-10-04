@@ -2,6 +2,7 @@ import {
   InfoDataGrid,
   InfoPanelTitle,
 } from "@components/commons/info-panel/info-panel.component";
+import useUserDetails from "@hooks/useUserDetails";
 import { Avatar } from "@ui/avatar/avatar";
 import { Card } from "@ui/card/card.component";
 import FlexLayout from "@ui/layout/flex";
@@ -24,13 +25,28 @@ const PersonalDetailComponent: React.FC<PersonalDetailProps> = ({
   setActiveTab,
   tabs,
 }) => {
+  const { userDetails } = useUserDetails();
+  if (!userDetails) {
+    return (
+      <Card>
+        <div>
+          <p>Something went wrong loading metrics</p>
+        </div>
+      </Card>
+    );
+  }
+  const { personalInformation, shippingAddress, orderSummary } = userDetails;
+
   return (
     <Card>
       <FlexLayout justifyContent="space-between">
         <Section>
           <FlexLayout gap={"1rem"} alignItems="center" height={"100%"}>
-            <Avatar size="xl" name={"AK"} />
-            <InfoPanelTitle name="John Doe" subtitle={"JohnDoe@gmail.com"} />
+            <Avatar size="xl" name={personalInformation.name} />
+            <InfoPanelTitle
+              name={personalInformation.name}
+              subtitle={personalInformation.email}
+            />
           </FlexLayout>
         </Section>
 
@@ -41,10 +57,14 @@ const PersonalDetailComponent: React.FC<PersonalDetailProps> = ({
             </Text>
             <div>
               <InfoDataGrid title={"Contact Number"}>
-                (201) 555-104
+                {personalInformation.contactNumber}
               </InfoDataGrid>
-              <InfoDataGrid title={"Date of Birth"}>1 Jan, 1985</InfoDataGrid>
-              <InfoDataGrid title={"Member Since"}>3 March,2023</InfoDataGrid>
+              <InfoDataGrid title={"Date of Birth"}>
+                {personalInformation.dateOfBirth}
+              </InfoDataGrid>
+              <InfoDataGrid title={"Member Since"}>
+                {personalInformation.memberSince}
+              </InfoDataGrid>
             </div>
           </FlexLayout>
         </Section>
@@ -54,11 +74,25 @@ const PersonalDetailComponent: React.FC<PersonalDetailProps> = ({
             <Text color="muted" size="sm" weight="semibold">
               SHIPPING ADDRESS
             </Text>
-            <Text size="xs">3517 W. Gray St. Utica, Pennsylvania 57867</Text>
+            <Text size="xs">
+              {`${shippingAddress.address} 
+              ${shippingAddress.city} 
+              ${shippingAddress.city} 
+              ${shippingAddress.zipCode}`}
+            </Text>
             <FlexLayout gap={"4rem"}>
-              <InfoPanelTitle name="150" subtitle={"Total Order"} />
-              <InfoPanelTitle name="150" subtitle={"Completed"} />
-              <InfoPanelTitle name="150" subtitle={"Cancelled"} />
+              <InfoPanelTitle
+                name={orderSummary.totalOrder}
+                subtitle={"Total Order"}
+              />
+              <InfoPanelTitle
+                name={orderSummary.completed}
+                subtitle={"Completed"}
+              />
+              <InfoPanelTitle
+                name={orderSummary.canceled}
+                subtitle={"Cancelled"}
+              />
             </FlexLayout>
           </FlexLayout>
         </Section>

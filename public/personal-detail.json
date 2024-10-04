@@ -14,9 +14,9 @@
       "zipCode": "57867"
     },
     "orderSummary": {
-      "totalOrder": 150,
-      "completed": 140,
-      "canceled": 10
+      "totalOrder": "150",
+      "completed": "140",
+      "canceled": "10"
     }
   },
   "message": "Successfully fetched"

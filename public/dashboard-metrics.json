@@ -2,8 +2,10 @@
   "data": {
     "totalSalesAndCosts": {
       "amount": "$350K",
-      "change": "8.56%",
-      "period": "Last 7 days"
+      "change": {
+        "value": "16.2",
+        "status": "decreased"
+      }
     },
     "totalProfit": {
       "amount": "50K",
@@ -15,6 +17,7 @@
     "countryMetrics": [
       {
         "country": "United States",
+        "flag": "https://flagsapi.com/US/flat/64.png",
         "value": "30K",
         "change": {
           "value": "25.8",
@@ -23,6 +26,7 @@
       },
       {
         "country": "Brazil",
+        "flag": "https://flagsapi.com/BR/flat/64.png",
         "value": "26K",
         "change": {
           "value": "16.2",
@@ -31,6 +35,7 @@
       },
       {
         "country": "Australia",
+        "flag": "https://flagsapi.com/AU/flat/64.png",
         "value": "17K",
         "change": {
           "value": "11.9",
